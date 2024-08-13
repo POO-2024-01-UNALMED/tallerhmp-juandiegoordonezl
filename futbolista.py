@@ -1,39 +1,40 @@
 from deportista import Deportista
 from persona import Persona
-class Futbolista(Persona, Deportista):
+
+
+class Futbolista(Deportista,Persona):
     listaFutbolistas = []
 
-    def __init__(self, nombre, edad, altura, sexo, deporte, años_practicando, goles_marcados, tarjetas_rojas, pierna_habil):
-        Persona.__init__(self, nombre, edad, altura, sexo)
-        Deportista.__init__(nombre,edad,altura,sexo,"Futbol",años_practicando)
-        self.__goles_marcados = goles_marcados
-        self.__tarjetas_rojas = tarjetas_rojas
-        self.__pierna_habil = pierna_habil
+    def __init__(self, nombre, edad, altura, sexo, añosPracticando, golesMarcados, tarjetasRojas, piernaHabil):
+        super().__init__(nombre,edad,altura,sexo,"Futbol",añosPracticando)
+        self._golesMarcados = golesMarcados
+        self._tarjetasRojas = tarjetasRojas
+        self._piernaHabil = piernaHabil
         Futbolista.listaFutbolistas.append(self)
 
     # Métodos get
     def get_goles_marcados(self):
-        return self.__goles_marcados
+        return self._golesMarcados
 
     def get_tarjetas_rojas(self):
-        return self.__tarjetas_rojas
+        return self._tarjetasRojas
 
     def get_pierna_habil(self):
-        return self.__pierna_habil
+        return self._piernaHabil
     
     @classmethod
     def getListaFutbolistas(cls):
         return Futbolista.listasFutbolistas
 
     # Métodos set
-    def set_goles_marcados(self, goles_marcados):
-        self.__goles_marcados = goles_marcados
+    def set_goles_marcados(self, golesMarcados):
+        self._golesMarcados = golesMarcados
 
-    def set_tarjetas_rojas(self, tarjetas_rojas):
-        self.__tarjetas_rojas = tarjetas_rojas
+    def set_tarjetas_rojas(self, tarjetasRojas):
+        self._tarjetasRojas = tarjetasRojas
 
-    def set_pierna_habil(self, pierna_habil):
-        self.__pierna_habil = pierna_habil
+    def set_pierna_habil(self, piernaHabil):
+        self._piernaHabil = piernaHabil
      
     @classmethod   
     def setListaFutbolistas(cls,listaFutbolistas):
@@ -41,5 +42,5 @@ class Futbolista(Persona, Deportista):
 
     # Método str
     def __str__(self):
-        return f"Mi nombre es "+str(self.get_nombre())+" soy profesional en el deporte "+ str(self.get_deporte()) + " Tengo "+ str(self.get_edad()) + " años de edad y llevo "+ str(self.get_años_practicando()) + " años en el deporte"
+        return f"Mi nombre es "+str(self.get_nombre())+" soy profesional en el deporte "+ str(self.getDeporte()) + " Tengo "+ str(self.get_edad()) + " años de edad y llevo "+ str(self.getAños_Practicando()) + " años en el deporte"
     
