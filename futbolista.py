@@ -5,7 +5,7 @@ class Futbolista(Persona, Deportista):
 
     def __init__(self, nombre, edad, altura, sexo, deporte, años_practicando, goles_marcados, tarjetas_rojas, pierna_habil):
         Persona.__init__(self, nombre, edad, altura, sexo)
-        Deportista.__init__(self, deporte, años_practicando)
+        Deportista.__init__(nombre,edad,altura,sexo,"Futbol",años_practicando)
         self.__goles_marcados = goles_marcados
         self.__tarjetas_rojas = tarjetas_rojas
         self.__pierna_habil = pierna_habil
@@ -41,4 +41,5 @@ class Futbolista(Persona, Deportista):
 
     # Método str
     def __str__(self):
-        return f"Mi nombre es {self.get_nombre()} soy profesional en el deporte {self.get_deporte()}. Tengo {self.get_edad()} años de edad y llevo {self.get_años_practicando()} años en el deporte."
+        return f"Mi nombre es "+str(self.get_nombre())+" soy profesional en el deporte "+ str(self.get_deporte()) + " Tengo "+ str(self.get_edad()) + " años de edad y llevo "+ str(self.get_años_practicando()) + " años en el deporte"
+    
