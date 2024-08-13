@@ -37,4 +37,4 @@ class Futbolista(Deportista,Persona):
         cls.listaFutbolistas=listaFutbolistas
         
     def __str__(self):
-        return "Mi nombre es "+ self.get_nombre() +" soy profesional en el deporte "+ self.getDeporte()+" Tengo "+str(self.get_edad())+" años de edad y llevo "+ str(self.getAñosPracticando())+" años en el deporte"
+        return "Mi nombre es "+ self.getNombre() +" soy profesional en el deporte "+ self.getDeporte()+" Tengo "+str(self.getEdad())+" años de edad y llevo "+ str(self.getAñosPracticando())+" años en el deporte"
